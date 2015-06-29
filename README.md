@@ -9,7 +9,7 @@ Relevant use cases for when the nginx vhost configuration needs to be customized
 ## Installation
 
 ```bash
-git clone https://github.com/neam/dokku-nginx-vhosts-custom-configuration.git /var/lib/dokku/plugins/nginx-vhosts-custom-configuration
+git clone https://github.com/stnguyen/dokku-nginx-vhosts-custom-configuration.git /var/lib/dokku/plugins/nginx-vhosts-custom-configuration
 ```
 
 ## Simple usage
@@ -19,8 +19,8 @@ git clone https://github.com/neam/dokku-nginx-vhosts-custom-configuration.git /v
 2. Set the environment variable NGINX_VHOSTS_CUSTOM_CONFIGURATION to the in-container path to the file above:
 
 ```bash
-$ dokku config:set <app> NGINX_VHOSTS_CUSTOM_CONFIGURATION=nginx.inc.conf             # Server side
-$ ssh dokku@server config:set <app> NGINX_VHOSTS_CUSTOM_CONFIGURATION=nginx.inc.conf  # Client side
+vim .env
+export NGINX_VHOSTS_CUSTOM_CONFIGURATION='nginx.inc.conf'
 ```
 
 You're done! This plugin will read app environment variable with in-container path to custom configuration file and import the custom configuration to the app-specific configuration on the  dokku host.
